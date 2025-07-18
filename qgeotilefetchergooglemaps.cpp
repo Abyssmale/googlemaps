@@ -94,6 +94,7 @@ QGeoTiledMapReply *QGeoTileFetcherGooglemaps::getTileImage(const QGeoTileSpec &s
     QUrl url(surl);
 
     netRequest.setUrl(url);
+    netRequest.setAttribute(QNetworkRequest::Http2AllowedAttribute, false);
 
     QNetworkReply *netReply = m_networkManager->get(netRequest);
 
